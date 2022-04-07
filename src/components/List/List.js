@@ -32,7 +32,7 @@ const List = () => {
                     setPhone(event.target.value)}}></input>
                     <input type="text" placeholder="hobbies" onChange={ (event) => {
                     setHobbies(event.target.value)}}></input>
-                <Button onClick={ () => {dispatch(addTask({id: taskList[taskList.length -1].id + 1, name, phone, hobbies})) }}>Add User</Button>
+                <Button type='reset'  onClick={ () => {dispatch(addTask({id: taskList[taskList.length -1].id + 1, name, phone, hobbies})) } }  >Add User</Button>
 
             </div>
 
@@ -71,9 +71,9 @@ const List = () => {
                    <td><input type="text" placeholder="update hobbies" onChange={ (event) => {
                     setNewhobbies(event.target.value)}}></input></td>
 
-                   <td><Link to={`/edit`}><Button onClick={() =>{
+                   <td><Button onClick={() =>{
                         dispatch(updateTask({id: task.id, name: newname, phone: newphone, hobbies: newhobbies}));
-                    }} variant="info"> Update</Button></Link></td>
+                    }} variant="success"> Update</Button></td>
 
 
                     <td><Button onClick={ ()=>  { 
